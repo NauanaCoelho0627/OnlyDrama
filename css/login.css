@@ -1,10 +1,10 @@
-@import url('https://fonts.google.com/specimen/Poiret+One#styles');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 body{
     display: flex;
     margin: 0;
     padding: 0;
     background-color: #151515;
-    font-family: poiret-one;
+    font-family: 'Poiret One', cursive;
 }
 a{
     text-decoration: none;
@@ -30,13 +30,10 @@ a{
     margin-left: -10%;
 }
 .form{
-    width: 70vh;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-left: 28%;
-    margin-top: -3%;
-    border: 1px solid #ddd5ff;
+    margin-top: -15%;
 }
 .form h1{
     color: #ddd5ff;
@@ -64,8 +61,10 @@ a{
     height: 30vh;
     display: flex;
     flex-direction: column;
-    padding: 5%;
-    margin-left: 15%;
+    border: #ddd5ff 1px solid;
+    border-radius: 5px;
+    padding: 10%;
+    margin-left: 25%;
 }
 .formulario button{
     width: 25vh;

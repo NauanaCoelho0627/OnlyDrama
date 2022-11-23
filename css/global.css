@@ -88,10 +88,13 @@ ul{
 
 .navegation{
     margin-top: 2%;
+
 }
 .navegation li{
     margin-left: 40%;
     font-size: 23px;
+    cursor: pointer;
+    color: #ddd5ff;
 }
 .nav .cont{
     display: flex;
@@ -124,6 +127,12 @@ ul{
     border: 1px solid #ddd5ff;
     color: #ddd5ff;
     margin-top: 10%;
+}
+.user button:hover{
+    background-color: #ddd5ff;
+}
+.user button a:hover{
+    color: #151515;
 }
 .out{
   margin-top: 3%;  
