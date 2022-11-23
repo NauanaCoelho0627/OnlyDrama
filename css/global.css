@@ -68,12 +68,15 @@ ul{
 }
 .navbar{
     border-right: 1px solid white;
-    width: 33vh;
+    width: 35vh;
     height: 100vh;
     position: fixed;
 }
 .navbar .cont img{
     width: 5vh;
+}
+.navbar .cont{
+    margin-left: 5%;
 }
 
 /*menu horizontal*/

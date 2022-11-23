@@ -1,14 +1,17 @@
 /*banner - carrosseu*/
+.banner-slider{
+    width: 100%;
+}
 .slider{
     height: 60vh;
-    width: 165.7vh;
+    width: 174vh;
     overflow: hidden;
     position: relative;
 }
 .slider img{
     margin: 0;
     height: 60vh;
-    width: 165.7vh;
+    width: 174.5vh;
     vertical-align: top;
     object-fit: cover;
     object-position: 0 -50px;
@@ -73,6 +76,7 @@
 
 .conjunto2{
     margin-left: 5%;
+    margin-bottom: 5%;
 }
 .conjunto2 .cards{
     margin-top: 5%;
