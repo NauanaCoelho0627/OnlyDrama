@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #151515;
+    font-family: 'Poiret One', cursive;
+}
+a{
+    text-decoration: none;
+}
+.logo{
+    margin-left: 75%;
+}
+.logo img{
+    width: 30vh;
+}
+
+.banner{
+    background-image: url(https://i.pinimg.com/originals/26/4f/d2/264fd2c3e1fd2641a2cd445858dcdbf1.jpg);
+    width: 40%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position-y: -5rem;
+}
+
+.cadastro{
+    width: 152vh;
+    margin-left: -10%;
+}
+.form{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: -15%;
+}
+.form h1{
+    color: #ddd5ff;
+    font-size: 50px;
+}
+.span{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.span h4{
+    color: #ddd5ff;
+    font-size: 22px;
+}
+.span a{
+    margin-left: 5px;
+    font-size: 22px;
+    color: rgb(91, 91, 138);
+}
+.span a:hover{
+    font-size: 20px;
+}
+.formulario{
+    width: 40vh;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    border: #ddd5ff 1px solid;
+    border-radius: 5px;
+    padding: 10%;
+    margin-left: 25%;
+}
+.formulario button{
+    width: 25vh;
+    height: 5vh;
+    background-color: transparent;
+    border: 1px solid #ddd5ff;
+    margin-left: 20%;
+    margin-top: 20%;
+}
+.formulario button a{
+    color: #ddd5ff;
+    font-size: 15px;
+}
+.formulario button:hover{
+    background-color: #ddd5ff;
+}
+.formulario button a:hover{
+    color: #151515;
+}
+input{
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid;
+    margin-top: 2%;
+    padding: 10px;
+    color: #ddd5ff;
+}

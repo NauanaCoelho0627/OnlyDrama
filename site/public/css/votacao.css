@@ -1,0 +1,44 @@
+h2{
+    color: #ddd5ff;
+    margin-left: 5%;
+}
+.container1{
+    color: #ddd5ff;
+    margin-left: 25%;
+}
+.card{
+    background-color: white;
+    height: 157px;
+    width: 299px;
+    margin-left: 20px;
+    border-radius: 25px;
+    margin-bottom: 5%;
+}
+.cards{
+    display: flex;
+    position: relative;
+}
+.cards img{
+    width: 5vh;
+    height: 5vh;
+    margin-top: 6%;
+    margin-left: 2%;
+}
+
+label{
+    margin: 10%;
+}
+button{
+    width: 20vh;
+    height: 5vh;
+    background-color: transparent;
+    border: 1px solid #ddd5ff;
+    color: #ddd5ff;
+    cursor: pointer;
+    margin-top: 5%;
+    margin-left: 45%;
+}
+button:hover{
+    background-color: #ddd5ff;
+    color: black;
+}

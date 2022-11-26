@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #151515;
+    font-family: 'Poiret One', cursive;
+}
+a{
+    text-decoration: none;
+}
+.logo img{
+    width: 30vh;
+}
+
+.banner{
+    background-image: url(https://fsa.zobj.net/crop.php?r=J6VQuOmudWg3CWyAf0pDrL5Hx8jsno8zQaRLPtHM2RhcwB5kfMNHNY0dsHC_mYwPzok637rd5ENjoQ7LfMIZOQ69NmTQvXcVIYu0qNp9-qextmpR17etBbbCLFObGKHKljMaYTVNAVgA36NgQfFJiiPJk4UyWHQtSg8Kj4TYez5wts8TAoil7tbnWe1DKdP6WvexEpQb5daXoclV);
+    width: 40%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position-y: -5rem;
+}
+
+.login{
+    width: 152vh;
+}
+.form{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: -15%;
+}
+.form h1{
+    color: #ddd5ff;
+    font-size: 40px;
+}
+.span{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.span h4{
+    color: #ddd5ff;
+    font-size: 18px;
+}
+.span a{
+    margin-left: 5px;
+    font-size: 18px;
+    color: rgb(91, 91, 138);
+}
+.span a:hover{
+    font-size: 20px;
+}
+.formulario{
+    width: 40vh;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    border: #ddd5ff 1px solid;
+    border-radius: 5px;
+    padding: 10%;
+    margin-left: 25%;
+}
+.formulario button{
+    width: 25vh;
+    height: 40vh;
+    padding: 4%;
+    background-color: transparent;
+    border: 1px solid #ddd5ff;
+    margin-left: 20%;
+    margin-top: 10%;
+}
+.formulario button a{
+    color: #ddd5ff;
+}
+.formulario button:hover{
+    background-color: #ddd5ff;
+}
+.formulario button a:hover{
+    color: #151515;
+}
+
+label{
+    font-size: 20px;
+}
+input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid;
+    margin-top: 2%;
+    padding: 10px;
+    color: #ddd5ff;
+}

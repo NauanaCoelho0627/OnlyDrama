@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+body{
+    background-color: #151515;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-family: 'Poiret One', cursive;
+}
+
+/*menu fixo lateral*/
+a{
+    text-decoration: none;
+    color: white;
+}
+ul{
+    list-style: none;
+}
+.logo img{
+    width: 30vh;
+}
+.lista1{
+    border-bottom: 1px solid #242323;
+    padding-bottom: 30px;
+    margin-left: 5%;
+    width: 20vh;
+    margin-top: 5%;
+}
+.lista2{
+    border-bottom: 1px solid #242323;
+    padding-bottom: 30px;
+    margin-left: 5%;
+    width: 20vh;
+    margin-top: 15%;
+}
+.lista3{
+    margin-left: 5%;
+    width: 20vh;
+    margin-top: 15%;
+}
+.lista1 li{
+    display: flex;
+    font-size: 20px;
+    margin-left: -5%;
+}
+.lista1 li .a{
+    margin-top: 6%;
+    margin-left: 10%;
+}
+.lista2 li{
+    margin-top: 10%;
+    display: flex;
+    font-size: 20px;
+    margin-left: -5%;
+}
+.lista2 li .a{
+    margin-top: 6%;
+    margin-left: 10%;
+}
+.lista3 li{
+    margin-top: 10%;
+    display: flex;
+    font-size: 20px;
+    margin-left: -5%;
+}
+.lista3 li .a{
+    margin-top: 6%;
+    margin-left: 10%;
+}
+.navbar{
+    border-right: 1px solid white;
+    width: 33vh;
+    height: 100vh;
+    position: fixed;
+}
+.navbar .cont img{
+    width: 5vh;
+}
+.navbar .cont{
+    margin-left: 5%;
+}
+
+/*menu horizontal*/
+
+.nav{
+    height: 15vh;
+    border-bottom: 1px solid #242323;
+}
+.navegation ul{
+    display: flex;
+}
+
+.navegation{
+    margin-top: 2%;
+
+}
+.navegation li{
+    margin-left: 40%;
+    font-size: 23px;
+    cursor: pointer;
+    color: #ddd5ff;
+}
+.nav .cont{
+    display: flex;
+}
+.user{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 50vh;
+    height: 14vh;
+    margin-left: 50%;
+}
+.user h4{
+    margin-right: 6%;
+    font-size: 23px;
+    color: white;
+}
+.user img{
+    width: 10vh;
+    height: 10vh;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.user button{
+    height: 6vh;
+    width: 20vh;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #ddd5ff;
+    color: #ddd5ff;
+    margin-top: 10%;
+}
+.user button:hover{
+    background-color: #ddd5ff;
+}
+.user button a:hover{
+    color: #151515;
+}
+.out{
+  margin-top: 3%;  
+  cursor: pointer;
+}
+.out img{
+    width: 4vh;
+}
+
+.container{
+    width: 90%;
+    margin-left: 16.7%;
+}
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <title>Only Drama</title>
+</head>
+
+<body>
+
+    <div class="login">
+        <div class="logo">
+            <a href="index.html"><img src="img/only_drama.png"></a>
+        </div>
+
+        <div class="form">
+            <h1>Cadastro</h1>
+
+            <div class="formulario">
+                <input placeholder="Nome" id="nome_input">
+                <input placeholder="E-mail" id="email_input">
+                <input type="password" placeholder="senha" id="senha_input">
+                <input type="password" placeholder="confirmar senha" id="confirmacao_senha_input" minlength="8">
+
+                <button onclick="cadastrar()"><a href="">Cadastrar</a></button>
+            </div>
+
+            <div class="span">
+                <h4>Já possui alguma conta? </h4>
+                <h4><a href="login.html">Entrar</a></h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="slogan">
+            <p></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function cadastrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+
+            return false;
+        }
+        else {
+
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+
+                console.log("Cadastro: ", resposta);
+
+                if (resposta.ok) {
+                    alert("Usuário cadastrado!")
+                    console.log("Cadastro: ", resposta);
+
+                    window.location = "login.html";
+
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                
+            });
+
+            return false;
+        }
+    }
+</script>
