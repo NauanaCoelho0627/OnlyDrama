@@ -31,8 +31,9 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
-function votacao(){
-    var instrucao = `INSERT INTO votacao (fkusuario, fkDrama, notaDrama) VALUES ('${idUsuario}','${drama}','1');`;
+function votacao(drama){
+    var instrucao = `INSERT INTO votacao (fkDrama, notaDrama) VALUES ('${drama}','1');`;
+    return database.executar(instrucao);
 }
 
 module.exports = {

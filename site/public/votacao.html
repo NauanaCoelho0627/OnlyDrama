@@ -94,9 +94,33 @@
             return false
             alert('Você precisa votar em algum Drama para prosseguir')
         }else{
-            fetch(`/votacao/inserir${idUsuario}`,{
+    //         fetch(`/votacao/inserir`,{
+    //             method: "POST",
+    //             headers:{
+    //                 "Content-Type": "application/json"
+    //             },
+    //             body: JSON.stringify({
+    //                 // crie um atributo que recebe o valor recuperado aqui
+    //                 // Agora vá para o arquivo routes/usuario.js
+    //                 dramaServer: dramaVar,
+    //             })
+    //         }).then(function(resposta){
+    //             if(resposta.ok){
+    //                 alert('Votação realizada com sucesso')
+    //                 window.location = ''
+    //             }else{
+    //                 throw("Houve um erro ao tentar realizar o cadastro!");
+    //                 alert('Houve um erro ao realizar a votação por favor tente novamente')
+    //             }
+    //         });
+
+    //         return false
+    //     }
+    // }
+// Enviando o valor da nova input
+fetch("/usuarios/inserir", {
                 method: "POST",
-                headers:{
+                headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
@@ -104,18 +128,26 @@
                     // Agora vá para o arquivo routes/usuario.js
                     dramaServer: dramaVar,
                 })
-            }).then(function(resposta){
-                if(resposta.ok){
-                    alert('Votação realizada com sucesso')
-                    window.location = ''
-                }else{
-                    throw("Houve um erro ao tentar realizar o cadastro!");
-                    alert('Houve um erro ao realizar a votação por favor tente novamente')
+            }).then(function (resposta) {
+
+                console.log("Cadastro: ", resposta);
+
+                if (resposta.ok) {
+                    alert("Votação realizada com sucesso")
+                    console.log("Cadastro: ", resposta);
+
+                    window.location = "";
+
+                } else {
+                    alert('Houve um erro ao realizar a votação')
+                    throw ("Houve um erro ao tentar realizar a votação");
                 }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                
             });
 
-            return false
+            return false;
         }
     }
-
 </script>
