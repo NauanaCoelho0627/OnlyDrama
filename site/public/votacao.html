@@ -43,15 +43,27 @@
                 <div class="cards">
                     <div class="opcao1">
                         <div class="card img1" id="1"></div>
-                        <label>Descendentes do Sol</label><input type="checkbox" id="drama1_input">
+                        <label>Descendentes do Sol</label>
+                        <select id="drama">
+                            <option value=""></option>
+                            <option value="1">Selecionar</option>
+                        </select>
                     </div>
                     <div class="opcao2">
                         <div class="card  img2" id="2"></div>
-                        <label>W Two Words</label><input type="checkbox" id="drama2_input">
+                        <label>W Two Words</label>
+                        <select id="drama">
+                            <option value=""></option>
+                            <option value="2">Selecionar</option>
+                        </select>
                     </div>
                     <div class="opcao3">
                         <div class="card  img3" id="3"></div>
-                        <label>Run On</label><input type="checkbox" id="drama3_input">
+                        <label>Run On</label>
+                        <select id="drama">
+                            <option value=""></option>
+                            <option value="3">Selecionar</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -75,16 +87,10 @@
 
     function votar(){
         var idUsuario = sessionStorage.ID_USUARIO;
+        var dramaVar = drama.value
 
-        if(drama1_input.value != ""){
-            var dramaVar = drama1_input.value;
-        }else if(drama2_input.value != ""){
-            var dramaVar = drama2_input.value;
-        }else{
-            var dramaVar = drama3_input.value;
-        }
 
-        if(drama1Var == "" || drama2Var == "" || drama3Var == ""){
+        if(dramaVar == ""){
             return false
             alert('Você precisa votar em algum Drama para prosseguir')
         }else{
