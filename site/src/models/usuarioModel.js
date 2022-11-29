@@ -31,8 +31,9 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
-function votacao(drama){
-    var instrucao = `INSERT INTO votacao (fkDrama, notaDrama) VALUES ('${drama}','1');`;
+function votacao(drama, filme, musica){
+    var instrucao = `INSERT INTO votacao (fkDrama, fkFilme, fkMusica, notaDrama, notaFilme, notaMusica) VALUES ('${drama}','${filme}','${musica}','1','1','1');`;
+    console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 

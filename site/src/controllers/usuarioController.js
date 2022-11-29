@@ -95,16 +95,24 @@ function cadastrar(req, res) {
 }
 
 function votacao(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    // Crie uma variável que vá recuperar os valores do arquivo votacao.html
     var drama = req.body.dramaServer;
+    var filme = req.body.filmeServer;
+    var musica = req.body.musicaServer;
+
+    console.log(drama, filme, musica)
 
     // Faça as validações dos valores
     if (drama == undefined) {
         res.status(400).send("Votacao indefinida");
-    }{
+    }if (filme == undefined) {
+        res.status(400).send("Votacao indefinida");
+    }else if (musica == undefined) {
+        res.status(400).send("Votacao indefinida");
+    }else{
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.votacao(drama)
+        usuarioModel.votacao(drama, filme, musica)
             .then(
                 function (resultado) {
                     res.json(resultado);

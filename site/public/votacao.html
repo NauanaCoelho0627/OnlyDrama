@@ -36,7 +36,7 @@
 
 <!-- Votação -->
 
-    <div class="container1">
+    <div class="container1" id="cont1" style="display: block;">
         <h2>Vote no seu Drama preferido</h2>
         <div class="conjunto1">
             <div class="indicacoes">
@@ -44,81 +44,187 @@
                     <div class="opcao1">
                         <div class="card img1" id="1"></div>
                         <label>Descendentes do Sol</label>
-                        <select id="drama">
-                            <option value=""></option>
-                            <option value="1">Selecionar</option>
-                        </select>
+                        <input type="radio" name="opcao" id="drama1">
                     </div>
                     <div class="opcao2">
                         <div class="card  img2" id="2"></div>
                         <label>W Two Words</label>
-                        <select id="drama">
-                            <option value=""></option>
-                            <option value="2">Selecionar</option>
-                        </select>
+                        <input type="radio" name="opcao" id="drama2">
                     </div>
                     <div class="opcao3">
                         <div class="card  img3" id="3"></div>
                         <label>Run On</label>
-                        <select id="drama">
-                            <option value=""></option>
-                            <option value="3">Selecionar</option>
-                        </select>
+                        <input type="radio" name="opcao" id="drama3">
+                    </div>
+                </div>
+            </div>
+            <h2>Vote no seu Filme preferido</h2>
+        <div class="conjunto1">
+            <div class="indicacoes">
+                <div class="cards">
+                    <div class="opcao1">
+                        <div class="card img20" id="1"></div>
+                        <label>Train Zumbie</label>
+                        <input type="radio" name="opcao2" id="filme1">
+                    </div>
+                    <div class="opcao2">
+                        <div class="card  img21" id="2"></div>
+                        <label># Alive</label>
+                        <input type="radio" name="opcao2" id="filme2">
+                    </div>
+                    <div class="opcao3">
+                        <div class="card  img22" id="3"></div>
+                        <label>Space sweepers</label>
+                        <input type="radio" name="opcao2" id="filme3">
+                    </div>
+                </div>
+            </div>
+            <h2>Vote na sua Musica preferida</h2>
+        <div class="conjunto1">
+            <div class="indicacoes">
+                <div class="cards">
+                    <div class="opcao1">
+                        <div class="card img34" id="1"></div>
+                        <label>Don't Leave me</label>
+                        <input type="radio" name="opcao3" id="musica1">
+                    </div>
+                    <div class="opcao2">
+                        <div class="card  img35" id="2"></div>
+                        <label>So What</label>
+                        <input type="radio" name="opcao3" id="musica2">
+                    </div>
+                    <div class="opcao3">
+                        <div class="card  img36" id="3"></div>
+                        <label>Run BTS</label>
+                        <input type="radio" name="opcao3" id="musica3">
                     </div>
                 </div>
             </div>
         </div>
 
         <button onclick="votar()">Votar</button>
+        <button onclick="resultado()">Resultado</button>
     </div>
+
+    <div class="container2" id="cont2"></div>
+    <div class="op">
+        <div id="primeiro_lugarD"></div>
+        <div id="segundo_lugarD"></div>
+        <div id="terceiro_lugarD"></div>
+    </div>
+    <div class="op2">
+        <div id="primeiro_lugarF"></div>
+        <div id="segundo_lugarF"></div>
+        <div id="terceiro_lugarF"></div>
+    </div>
+    <div class="op3">
+        <div id="primeiro_lugarM"></div>
+        <div id="segundo_lugarM"></div>
+        <div id="terceiro_lugarM"></div>
+    </div>
+    
     
 </body>
 </html>
 <script>
 
-    votacaoDrama = {
-        drama1: [],
-        drama2: [],
-        drama3: []
-    }
-    function validacao(){
+        var Vdrama = {
+            d1: [],
+            d2: [],
+            d3: []
+        }
+        var Vfilme = {
+            f1: [],
+            f2: [],
+            f3: []
+        }
+        var Vmusica = {
+            m1: [],
+            m2: [],
+            m3: [] 
+        }
 
-    }
 
     function votar(){
-        var idUsuario = sessionStorage.ID_USUARIO;
-        var dramaVar = drama.value
+        var dramaVar = 0;
+        var musicaVar = 0;
+        var filmeVar = 0;
 
+        var drama1 = document.getElementById('drama1').checked
+        var drama2 = document.getElementById('drama2').checked
+        var drama3 = document.getElementById('drama3').checked
 
-        if(dramaVar == ""){
+        if(drama1 == true){
+            drama2.checked = false
+            drama3.checked = false
+            dramaVar = 1
+            Vdrama.d1.push(1)
+        }else if(drama2 == true){
+            drama1.checked = false
+            drama3.checked = false
+            dramaVar = 2
+            Vdrama.d2.push(1)
+        }else if(drama3 == true){
+            drama1.checked = false
+            drama2.checked = false
+            dramaVar = 3
+            Vdrama.d3.push(1)
+        }
+
+        console.log(dramaVar)
+
+        //validação para filme
+        var filme1 = document.getElementById('filme1').checked
+        var filme2 = document.getElementById('filme2').checked
+        var filme3 = document.getElementById('filme3').checked
+
+        if(filme1 == true){
+            filme2.checked = false
+            filme3.checked = false
+            filmeVar = 1
+            Vfilme.f1.push(1)
+        }else if(filme2 == true){
+            filme1.checked = false
+            filme3.checked = false
+            filmeVar = 2
+            Vfilme.f2.push(1)
+        }else if(filme3 == true){
+            filme1.checked = false
+            filme2.checked = false
+            filmeVar = 3
+            Vfilme.f3.push(1)
+        }
+
+        console.log(filmeVar)
+
+        //validação para musica
+        var musica1 = document.getElementById('musica1').checked
+        var musica2 = document.getElementById('musica2').checked
+        var musica3 = document.getElementById('musica3').checked
+
+        if(musica1 == true){
+            musica2.checked = false
+            musica3.checked = false
+            musicaVar = 1
+            Vmusica.m1.push(1)
+        }else if(musica2 == true){
+            musica1.checked = false
+            musica3.checked = false
+            musicaVar = 2
+            Vmusica.m2.push(1)
+        }else if(musica3 == true){
+            musica1.checked = false
+            musica2.checked = false
+            musicaVar = 3
+            Vmusica.m3.push(1)
+        }
+
+        if(dramaVar == "" || filmeVar == "" || musicaVar == ""){
             return false
-            alert('Você precisa votar em algum Drama para prosseguir')
+            alert('Você precisa votar nas tres categorias para votar para prosseguir')
         }else{
-    //         fetch(`/votacao/inserir`,{
-    //             method: "POST",
-    //             headers:{
-    //                 "Content-Type": "application/json"
-    //             },
-    //             body: JSON.stringify({
-    //                 // crie um atributo que recebe o valor recuperado aqui
-    //                 // Agora vá para o arquivo routes/usuario.js
-    //                 dramaServer: dramaVar,
-    //             })
-    //         }).then(function(resposta){
-    //             if(resposta.ok){
-    //                 alert('Votação realizada com sucesso')
-    //                 window.location = ''
-    //             }else{
-    //                 throw("Houve um erro ao tentar realizar o cadastro!");
-    //                 alert('Houve um erro ao realizar a votação por favor tente novamente')
-    //             }
-    //         });
-
-    //         return false
-    //     }
-    // }
-// Enviando o valor da nova input
-fetch("/usuarios/inserir", {
+        // Enviando o valor da nova input
+        fetch("/usuarios/inserir", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -127,16 +233,18 @@ fetch("/usuarios/inserir", {
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/usuario.js
                     dramaServer: dramaVar,
+                    filmeServer: filmeVar,
+                    musicaServer: musicaVar
                 })
             }).then(function (resposta) {
 
-                console.log("Cadastro: ", resposta);
+                console.log("Votação: ", resposta);
 
                 if (resposta.ok) {
                     alert("Votação realizada com sucesso")
-                    console.log("Cadastro: ", resposta);
+                    console.log("Votação: ", resposta);
 
-                    window.location = "";
+                    // window.location = "resultado.html";
 
                 } else {
                     alert('Houve um erro ao realizar a votação')
@@ -149,5 +257,174 @@ fetch("/usuarios/inserir", {
 
             return false;
         }
+        console.log('ta funcionando')
     }
+
+    function resultado(){
+        var TotalVotos = 0;
+        var primeiroD = 0;
+        var segundoD = 0;
+        var terceiroD = 0;
+
+        for(i = 0; i < Vdrama.d1.length; i++){
+            TotalVotos++;
+            primeiroD++
+        }
+        for(i = 0; i < Vdrama.d2.length; i++){
+            TotalVotos++;
+            segundoD++
+        }
+        for(i = 0; i < Vdrama.d3.length; i++){
+            TotalVotos++;
+            terceiroD++
+        }
+
+        var primeiroF = 0;
+        var segundoF = 0;
+        var terceiroF = 0;
+        for(i = 0; i < Vfilme.f1.length; i++){
+            TotalVotos++;
+            primeiroF++
+        }
+        for(i = 0; i < Vfilme.f2.length; i++){
+            TotalVotos++;
+            segundoF++
+        }
+        for(i = 0; i < Vfilme.f3.length; i++){
+            TotalVotos++;
+            terceiroF++
+        }
+
+        var primeiroM = 0;
+        var segundoM = 0;
+        var terceiroM = 0;
+        for(i = 0; i < Vmusica.m1.length; i++){
+            TotalVotos++;
+            primeiroM++
+        }
+        for(i = 0; i < Vmusica.m2.length; i++){
+            TotalVotos++;
+            segundoM++
+        }
+        for(i = 0; i < Vmusica.m3.length; i++){
+            TotalVotos++;
+            terceiroM++
+        }
+
+        cont2.innerHTML = `<h2>Total de Votos: ${TotalVotos}`
+
+            //primeiro lugar
+            if(primeiroD > segundoD & primeiroD > terceiroD){
+                primeiro_lugarD.innerHTML = `<div class="card img1" id="1"></div>
+                        <label>1° Descendentes do Sol</label>`
+                
+            }else if(segundoD > primeiroD & segundoD > terceiroD){
+                primeiro_lugarD.innerHTML = `<div class="card  img2" id="2"></div>
+                        <label>1° W Two Words</label>`
+            }else{
+                primeiro_lugarD.innerHTML = `<div class="card  img3" id="3"></div>
+                        <label>1° Run On</label>`
+            }
+
+            if(primeiroF > segundoF & primeiroF > terceiroF){
+                primeiro_lugarF.innerHTML = `<div class="card img20" id="1"></div>
+                        <label>1° Train Zumbie</label>`
+                
+            }else if(segundoF > primeiroF & segundoF > terceiroF){
+                primeiro_lugarF.innerHTML = `<div class="card  img21" id="2"></div>
+                        <label>1° # Alive</label>`
+            }else{
+                primeiro_lugarF.innerHTML = `<div class="card  img22" id="3"></div>
+                        <label>1° Space sweepers</label>`
+            }
+
+            if(primeiroM > segundoM & primeiroM > terceiroM){
+                primeiro_lugarM.innerHTML = `<div class="card img34" id="1"></div>
+                        <label>1° Don't Leave me</label>`
+                
+            }else if(segundoM > primeiroM & segundoM > terceiroM){
+                primeiro_lugarM.innerHTML = `<div class="card  img35" id="2"></div>
+                        <label>1° So What</label>`
+            }else{
+                primeiro_lugarM.innerHTML = `<div class="card  img36" id="3"></div>
+                        <label>1° Run BTS</label>`
+            }
+
+            //segundo lugar
+            if(primeiroD < segundoD & primeiroD > terceiroD){
+                segundo_lugarD.innerHTML = `<div class="card img1" id="1"></div>
+                        <label>2° Descendentes do Sol</label>`
+                
+            }else if(segundoD < primeiroD & segundoD > terceiroD){
+                segundo_lugarD.innerHTML = `<div class="card  img2" id="2"></div>
+                        <label>2° W Two Words</label>`
+            }else{
+                segundo_lugarD.innerHTML = `<div class="card  img3" id="3"></div>
+                        <label>2° Run On</label>`
+            }
+
+            if(primeiroF < segundoF & primeiroF > terceiroF){
+                segundo_lugarF.innerHTML = `<div class="card img20" id="1"></div>
+                        <label>2° Train Zumbie</label>`
+                
+            }else if(segundoF < primeiroF & segundoF > terceiroF){
+                segundo_lugarF.innerHTML = `<div class="card  img21" id="2"></div>
+                        <label>2° # Alive</label>`
+            }else{
+                segundo_lugarF.innerHTML = `<div class="card  img22" id="3"></div>
+                        <label>2° Space sweepers</label>`
+            }
+
+            if(primeiroM < segundoM & primeiroM > terceiroM){
+                segundo_lugarM.innerHTML = `<div class="card img34" id="1"></div>
+                        <label>2° Don't Leave me</label>`
+                
+            }else if(segundoM < primeiroM & segundoM > terceiroM){
+                segundo_lugarM.innerHTML = `<div class="card  img35" id="2"></div>
+                        <label>2° So What</label>`
+            }else{
+                segundo_lugarM.innerHTML = `<div class="card  img36" id="3"></div>
+                        <label>2° Run BTS</label>`
+            }
+
+            //terceiro lugar
+            if(primeiroD < segundoD & primeiroD < terceiroD){
+                terceiro_lugarD.innerHTML = `<div class="card img1" id="1"></div>
+                        <label>3° Descendentes do Sol</label>`
+                
+            }else if(segundoD < primeiroD & segundoD < terceiroD){
+                terceiro_lugarD.innerHTML = `<div class="card  img2" id="2"></div>
+                        <label>3° W Two Words</label>`
+            }else{
+                terceiro_lugarD.innerHTML = `<div class="card  img3" id="3"></div>
+                        <label>3° Run On</label>`
+            }
+
+            if(primeiroF < segundoF & primeiroF < terceiroF){
+                terceiro_lugarF.innerHTML = `<div class="card img20" id="1"></div>
+                        <label>3° Train Zumbie</label>`
+                
+            }else if(segundoF < primeiroF & segundoF < terceiroF){
+                terceiro_lugarF.innerHTML = `<div class="card  img21" id="2"></div>
+                        <label>3° # Alive</label>`
+            }else{
+                terceiro_lugarF.innerHTML = `<div class="card  img22" id="3"></div>
+                        <label>3° Space sweepers</label>`
+            }
+
+            if(primeiroM < segundoM & primeiroM < terceiroM){
+                terceiro_lugarM.innerHTML = `<div class="card img34" id="1"></div>
+                        <label>3° Don't Leave me</label>`
+                
+            }else if(segundoM < primeiroM & segundoM < terceiroM){
+                terceiro_lugarM.innerHTML = `<div class="card  img35" id="2"></div>
+                        <label>3° So What</label>`
+            }else{
+                terceiro_lugarM.innerHTML = `<div class="card  img36" id="3"></div>
+                        <label>3° Run BTS</label>`
+            }
+
+    }
+
+    
 </script>

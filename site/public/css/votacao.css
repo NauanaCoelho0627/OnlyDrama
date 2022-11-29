@@ -42,3 +42,13 @@ button:hover{
     background-color: #ddd5ff;
     color: black;
 }
+
+.op{
+    display: flex;
+}
+.op2{
+    display: flex;
+}
+.op3{
+    display: flex;
+}
