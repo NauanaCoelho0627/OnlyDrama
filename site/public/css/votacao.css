@@ -36,11 +36,18 @@ button{
     color: #ddd5ff;
     cursor: pointer;
     margin-top: 5%;
-    margin-left: 45%;
 }
 button:hover{
     background-color: #ddd5ff;
     color: black;
+}
+.btn{
+    margin-left: 45vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    display: flex;
+    width: 60vh;
+    justify-content: space-between;
 }
 
 .op{
